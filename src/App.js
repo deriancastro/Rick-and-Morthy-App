@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import icon1 from "./img/left-arrow.png";
+import icon2 from "./img/right-arrow.png";
 import Header from "./Header";
 import Card from "./Card";
 import Button from "./Button";
@@ -62,7 +64,7 @@ export default function App() {
             setUrl(prev);
           }}
         >
-          atras
+          <img src={icon1} />
         </button>
         <div className="pages">
           <h3>
@@ -75,7 +77,7 @@ export default function App() {
             setUrl(next);
           }}
         >
-          adelante
+          <img src={icon2} />
         </button>
       </div>
     </div>
