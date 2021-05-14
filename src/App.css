@@ -1,3 +1,20 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-rows: 48px auto 48px;
+  gap: 20px;
+}
+
+.header {
+  background: steelblue;
+}
+
+.main {
+  position: scroll;
+  display: grid;
+  gap: 20px;
+}
+
+.nav {
+  background: red;
 }
