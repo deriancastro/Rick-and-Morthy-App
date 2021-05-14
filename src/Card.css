@@ -1,0 +1,20 @@
+.Card {
+  padding: 20px;
+  background: rgb(208, 210, 240);
+  border-radius: 8px;
+  display: grid;
+  margin: 0 auto;
+  width: 300px;
+  gap: 10px;
+}
+
+.Card--darkmode {
+  background: #666;
+  color: white;
+}
+
+.Card > div {
+  display: flex;
+  justify-content: space-evenly;
+  background: red;
+}
