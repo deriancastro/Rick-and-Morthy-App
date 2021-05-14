@@ -10,7 +10,6 @@ export default function Card({
   origin,
   image,
 }) {
-  const [isActive, setIsActive] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   return (
     <section className="Card">
