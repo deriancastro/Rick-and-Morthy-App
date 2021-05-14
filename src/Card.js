@@ -10,17 +10,24 @@ export default function Card({
   origin,
   image,
 }) {
+  const [isActive, setIsActive] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
   return (
     <section className="Card">
       <h2>{name}</h2>
       <img src={image}></img>
       <span>{origin.name}</span>
+      <button onClick={() => setShowInfo(!showInfo)}>
+        {showInfo ? "Hide Info" : "Show more"}
+      </button>
 
-      <div>
-        <span>{status}</span>
-        <span>{species}</span>
-        <span>{gender}</span>
-      </div>
+      {showInfo && (
+        <>
+          <span>{status}</span>
+          <span>{species}</span>
+          <span>{gender}</span>
+        </>
+      )}
     </section>
   );
 }
