@@ -2,7 +2,7 @@
   text-align: center;
   display: grid;
   grid-template-rows: 60px auto 48px;
-  gap: 10px;
+  gap: 5px;
   height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
@@ -16,5 +16,6 @@ main {
 }
 
 .nav {
-  background: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

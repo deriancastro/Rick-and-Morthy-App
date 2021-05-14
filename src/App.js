@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Card from "./Card";
 import Header from "./Header";
+import Card from "./Card";
+import Nav from "./Nav";
 
 export default function App() {
   const url = "https://rickandmortyapi.com/api/character/?page=1";
@@ -37,7 +38,11 @@ export default function App() {
         })}
       </main>
 
-      <div className="nav"></div>
+      <div className="nav">
+        <Nav page="<" isActive={true} />
+        <Nav page="About" isActive={false} />
+        <Nav page=">" isActive={false} />
+      </div>
     </div>
   );
 }
