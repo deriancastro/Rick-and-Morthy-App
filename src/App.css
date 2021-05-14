@@ -1,20 +1,33 @@
 .App {
   text-align: center;
   display: grid;
-  grid-template-rows: 48px auto 48px;
-  gap: 20px;
+  grid-template-rows: 60px auto 48px;
+  gap: 5px;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.header {
-  background: steelblue;
-}
-
-.main {
-  position: scroll;
-  display: grid;
-  gap: 20px;
+main {
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .nav {
-  background: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
+}
+
+.button {
+  background: rgb(43, 88, 88);
+  color: white;
+  border: none;
+}
+
+.pages {
+  background: chocolate;
+  color: white;
 }
