@@ -2,18 +2,35 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./Header";
 import Card from "./Card";
+import Button from "./Button";
 import Nav from "./Nav";
 
 export default function App() {
-  const url = "https://rickandmortyapi.com/api/character/?page=1";
+  const [url, setUrl] = useState(
+    "https://rickandmortyapi.com/api/character/?page=1"
+  );
   const [characters, setCharacters] = useState([]);
+  const [pages, setPages] = useState(34);
+  const [next, setNext] = useState(
+    "https://rickandmortyapi.com/api/character/?page=2"
+  );
+  const [prev, setPrev] = useState(" ");
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((resBody) => setCharacters(resBody.results))
+      .then((resBody) => {
+        setCharacters(resBody.results);
+        const { pages, next, prev } = resBody.info;
+        setPages(pages);
+        setNext(next);
+        setPrev(prev);
+      })
       .catch((error) => console.error(error));
   }, [url]);
+
+  let currentPage = url.split("").slice(48, 50).join("");
+  console.log(currentPage);
 
   return (
     <div className="App">
@@ -39,9 +56,27 @@ export default function App() {
       </main>
 
       <div className="nav">
-        <Nav page="<" isActive={true} />
-        <Nav page="About" isActive={false} />
-        <Nav page=">" isActive={false} />
+        <button
+          className="button"
+          onClick={() => {
+            setUrl(prev);
+          }}
+        >
+          atras
+        </button>
+        <div className="pages">
+          <h3>
+            {currentPage}/{pages}
+          </h3>
+        </div>
+        <button
+          className="button"
+          onClick={() => {
+            setUrl(next);
+          }}
+        >
+          adelante
+        </button>
       </div>
     </div>
   );
