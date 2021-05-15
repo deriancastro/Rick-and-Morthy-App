@@ -7,18 +7,19 @@ import icon2 from "./img/right-arrow.png";
 import Card from "./Card";
 import CardLocation from "./CardLocation";
 import CardEpisode from "./CardEpisode";
+import Nav from "./Nav";
 
 export default function Pagination() {
   //Characters//
-  /*const [urlCharacters, setUrl] = useState(
+  const [urlCharacters, setUrlCharacters] = useState(
     "https://rickandmortyapi.com/api/character/?page=1"
   );
   const [characters, setCharacters] = useState([]);
-  const [pages, setPages] = useState(34);
-  const [next, setNext] = useState(
+  const [pagesCharacters, setPagesCharacters] = useState(34);
+  const [nextCharacters, setNextCharacters] = useState(
     "https://rickandmortyapi.com/api/character/?page=2"
   );
-  const [prev, setPrev] = useState(" ");
+  const [prevCharacters, setPrevCharacters] = useState(" ");
 
   useEffect(() => {
     fetch(urlCharacters)
@@ -26,16 +27,15 @@ export default function Pagination() {
       .then((resBody) => {
         setCharacters(resBody.results);
         const { pages, next, prev } = resBody.info;
-        setPages(pages);
-        setNext(next);
-        setPrev(prev);
+        setPagesCharacters(pages);
+        setNextCharacters(next);
+        setPrevCharacters(prev);
       })
       .catch((error) => console.error(error));
   }, [urlCharacters]);
 
-  let currentPageString = urlCharacters.split("").slice(48, 50).join("");
-  let currentPage = parseInt(currentPageString);
-  console.log(currentPage);
+  let currentPageStringC = urlCharacters.split("").slice(48, 50).join("");
+  let currentPageCharacters = parseInt(currentPageStringC);
 
   function renderCharacters(characters) {
     return (
@@ -65,11 +65,11 @@ export default function Pagination() {
     "https://rickandmortyapi.com/api/location/?page=1"
   );
   const [locations, setLocations] = useState([]);
-  const [pages, setPages] = useState(6);
-  const [next, setNext] = useState(
+  const [pagesLocations, setPagesLocations] = useState(6);
+  const [nextLocations, setNextLocations] = useState(
     "https://rickandmortyapi.com/api/location/?page=2"
   );
-  const [prev, setPrev] = useState(" ");
+  const [prevLocations, setPrevLocations] = useState(" ");
 
   useEffect(() => {
     fetch(urlLocations)
@@ -77,16 +77,15 @@ export default function Pagination() {
       .then((resBody) => {
         setLocations(resBody.results);
         const { pages, next, prev } = resBody.info;
-        setPages(pages);
-        setNext(next);
-        setPrev(prev);
+        setPagesLocations(pages);
+        setNextLocations(next);
+        setPrevLocations(prev);
       })
       .catch((error) => console.error(error));
   }, [urlLocations]);
 
-  let currentPageString = urlLocations.split("").slice(47, 49).join("");
-  let currentPage = parseInt(currentPageString);
-  console.log(currentPage);
+  let currentPageStringL = urlLocations.split("").slice(47, 49).join("");
+  let currentPageLocations = parseInt(currentPageStringL);
 
   function renderLocations(locations) {
     return (
@@ -105,18 +104,18 @@ export default function Pagination() {
         })}
       </div>
     );
-  }*/
+  }
 
   //episode
   const [urlEpisodes, setUrlEpisodes] = useState(
     "https://rickandmortyapi.com/api/episode/?page=1"
   );
   const [episodes, setEpisodes] = useState([]);
-  const [pages, setPages] = useState(3);
-  const [next, setNext] = useState(
+  const [pagesEpisodes, setPagesEpisodes] = useState(3);
+  const [nextEpisodes, setNextEpisodes] = useState(
     "https://rickandmortyapi.com/api/episode/?page=2"
   );
-  const [prev, setPrev] = useState(" ");
+  const [prevEpisodes, setPrevEpisodes] = useState(" ");
 
   useEffect(() => {
     fetch(urlEpisodes)
@@ -124,16 +123,15 @@ export default function Pagination() {
       .then((resBody) => {
         setEpisodes(resBody.results);
         const { pages, next, prev } = resBody.info;
-        setPages(pages);
-        setNext(next);
-        setPrev(prev);
+        setPagesEpisodes(pages);
+        setNextEpisodes(next);
+        setPrevEpisodes(prev);
       })
       .catch((error) => console.error(error));
   }, [urlEpisodes]);
 
-  let currentPageString = urlEpisodes.split("").slice(46, 48).join("");
-  let currentPage = parseInt(currentPageString);
-  console.log(currentPage);
+  let currentPageStringE = urlEpisodes.split("").slice(46, 48).join("");
+  let currentPageEpisodes = parseInt(currentPageStringE);
 
   function renderEpisodes(episodes) {
     return (
@@ -154,25 +152,42 @@ export default function Pagination() {
     );
   }
 
+  const navPage = ["characters", "locations", "episodes"];
+  const [activePage, setActivePage] = useState("characters");
+
   return (
     <>
-      {renderEpisodes(episodes)}
-      <section className="Pagination">
-        <Button
-          onClick={() => setUrlEpisodes(prev)}
-          isActive={currentPage !== 1}
-        >
-          <img src={icon1} alt="to left" />
-        </Button>
-        <span className="Span">
-          {currentPage}/{pages}
-        </span>
-        <Button
-          onClick={() => setUrlEpisodes(next)}
-          isActive={currentPage !== pages}
-        >
-          <img src={icon2} alt="to right" />
-        </Button>
+      {activePage === "characters" && renderCharacters(characters)}
+
+      {activePage === "locations" && renderLocations(locations)}
+
+      {activePage === "episodes" && renderEpisodes(episodes)}
+
+      <section className="Menu">
+        <div className="Pagination">
+          <Button
+            onClick={() => setUrlCharacters(prevCharacters)}
+            isActive={currentPageCharacters !== 1}
+          >
+            <img src={icon1} alt="to left" />
+          </Button>
+          <span className="Span">
+            {currentPageCharacters}/{pagesCharacters}
+          </span>
+          <Button
+            onClick={() => setUrlCharacters(nextCharacters)}
+            isActive={currentPageCharacters !== pagesCharacters}
+          >
+            <img src={icon2} alt="to right" />
+          </Button>
+        </div>
+        <div>
+          <Nav
+            activePage={activePage}
+            navPage={navPage}
+            setActivePage={setActivePage}
+          />
+        </div>
       </section>
     </>
   );

@@ -1,0 +1,10 @@
+.NavButton {
+  padding: 12px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.NavButton.active {
+  background: hotpink;
+}
