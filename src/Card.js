@@ -14,7 +14,7 @@ export default function Card({
   return (
     <section className="Card">
       <h2>{name}</h2>
-      <img src={image}></img>
+      <img src={image} alt="character"></img>
       <span>{origin.name}</span>
       <button onClick={() => setShowInfo(!showInfo)}>
         {showInfo ? "Hide Info" : "Show more"}

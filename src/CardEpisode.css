@@ -1,0 +1,14 @@
+.CardEpisode {
+  padding: 20px;
+  background: rgb(208, 210, 240);
+  border-radius: 8px;
+  display: grid;
+  margin: 0 auto;
+  width: 200px;
+  gap: 10px;
+}
+
+.CardEpisode > ul {
+  padding: 0;
+  list-style: none;
+}
