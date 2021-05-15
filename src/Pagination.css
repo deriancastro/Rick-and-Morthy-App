@@ -1,0 +1,17 @@
+.Pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
+}
+
+.Span {
+  width: 50px;
+  text-align: center;
+}
+
+.cardContainer {
+  display: flex;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+  gap: 10px;
+}

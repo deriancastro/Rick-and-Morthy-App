@@ -8,19 +8,6 @@
   margin: 0 auto;
 }
 
-main {
-  overflow: scroll;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-content: center;
-}
-
 .button {
   background: rgb(43, 88, 88);
   color: white;
