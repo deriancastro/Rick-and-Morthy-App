@@ -6,8 +6,8 @@ export default function CardLocation({ name, type, dimension }) {
     <section className="CardLocation">
       <h2>{name}</h2>
       <ul>
-        <li>{type}</li>
-        <li>{dimension}</li>
+        <li>Type: {type}</li>
+        <li>Dimension: {dimension}</li>
       </ul>
     </section>
   );
