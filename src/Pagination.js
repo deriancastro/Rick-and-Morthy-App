@@ -4,6 +4,9 @@ import React from "react";
 import Button from "./Button";
 import icon1 from "./img/left-arrow.png";
 import icon2 from "./img/right-arrow.png";
+import img1 from "./img/ninja.png";
+import img2 from "./img/route.png";
+import img3 from "./img/chapter.png";
 import Card from "./Card";
 import CardLocation from "./CardLocation";
 import CardEpisode from "./CardEpisode";
@@ -224,7 +227,11 @@ export default function Pagination() {
     );
   }
 
-  const navPage = ["characters", "locations", "episodes"];
+  const navPage = [
+    { page: "characters", img: img1 },
+    { page: "locations", img: img2 },
+    { page: "episodes", img: img3 },
+  ];
   const [activePage, setActivePage] = useState("characters");
 
   return (

@@ -4,6 +4,7 @@
   height: 8vh;
   text-transform: capitalize;
   background: rgb(216, 226, 226);
+  text-align: center;
 }
 
 .NavButton.active {
