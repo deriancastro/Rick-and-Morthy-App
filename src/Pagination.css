@@ -1,12 +1,22 @@
+.Menu {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background: #333;
+  color: white;
+}
+
 .Pagination {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-content: center;
+  align-items: center;
 }
 
 .Span {
-  width: 50px;
-  text-align: center;
+  display: grid;
+  align-content: center;
+  background: #333;
+  height: 100%;
 }
 
 .cardContainer {

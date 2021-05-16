@@ -1,11 +1,20 @@
 import React from "react";
 import "./Nav.css";
-import Button from "./Button";
+import NavButton from "./NavButton";
 
-export default function Nav({ page, isActive }) {
+export default function Nav({ activePage, navPage, setActivePage }) {
   return (
     <nav className="Nav">
-      <Button isActive={isActive}>{page}</Button>
+      {navPage.map((page) => {
+        return (
+          <NavButton
+            key={page}
+            navPage={page}
+            activePage={activePage}
+            setActivePage={setActivePage}
+          ></NavButton>
+        );
+      })}
     </nav>
   );
 }

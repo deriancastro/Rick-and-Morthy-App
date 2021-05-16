@@ -1,0 +1,11 @@
+.NavButton {
+  padding: 5px;
+  border: none;
+  height: 8vh;
+  text-transform: capitalize;
+  background: rgb(216, 226, 226);
+}
+
+.NavButton.active {
+  background: #eba31d;
+}

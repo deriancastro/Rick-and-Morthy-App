@@ -1,9 +1,6 @@
 .Nav {
-  height: 48px;
-}
-
-.Nav > button {
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
+  align-items: center;
 }
