@@ -12,8 +12,6 @@
   margin: 0;
 }
 
-.Card > div {
-  display: flex;
-  justify-content: space-evenly;
-  background: red;
+.Card > img {
+  border-radius: 8px;
 }
