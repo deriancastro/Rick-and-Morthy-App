@@ -1,6 +1,6 @@
 .Card {
   padding: 20px;
-  background: rgb(208, 210, 240);
+  background: hsl(236, 52%, 88%, 0.9);
   border-radius: 8px;
   display: grid;
   margin: 0 auto;
