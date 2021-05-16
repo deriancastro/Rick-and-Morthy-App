@@ -1,10 +1,11 @@
 .NavButton {
-  padding: 12px;
-  color: white;
+  padding: 5px;
   border: none;
-  border-radius: 4px;
+  height: 8vh;
+  text-transform: capitalize;
+  background: rgb(216, 226, 226);
 }
 
 .NavButton.active {
-  background: hotpink;
+  background: #eba31d;
 }

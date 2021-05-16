@@ -8,9 +8,8 @@
   gap: 10px;
 }
 
-.Card--darkmode {
-  background: #666;
-  color: white;
+.Card > h2 {
+  margin: 0;
 }
 
 .Card > div {

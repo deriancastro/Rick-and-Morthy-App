@@ -15,16 +15,16 @@ export default function Card({
     <section className="Card">
       <h2>{name}</h2>
       <img src={image} alt="character"></img>
-      <span>{origin.name}</span>
+      <span>Origin: {origin.name}</span>
       <button onClick={() => setShowInfo(!showInfo)}>
         {showInfo ? "Hide Info" : "Show more"}
       </button>
 
       {showInfo && (
         <>
-          <span>{status}</span>
-          <span>{species}</span>
-          <span>{gender}</span>
+          <span>Status: {status}</span>
+          <span>Species: {species}</span>
+          <span>Gender: {gender}</span>
         </>
       )}
     </section>

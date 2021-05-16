@@ -60,6 +60,30 @@ export default function Pagination() {
     );
   }
 
+  function paginationCharacters() {
+    return (
+      <>
+        <Button
+          onClick={() => setUrlCharacters(prevCharacters)}
+          isActive={currentPageCharacters !== 1}
+        >
+          <img src={icon1} alt="to left" />
+        </Button>
+
+        <span className="Span">
+          {currentPageCharacters}/{pagesCharacters}
+        </span>
+
+        <Button
+          onClick={() => setUrlCharacters(nextCharacters)}
+          isActive={currentPageCharacters !== pagesCharacters}
+        >
+          <img src={icon2} alt="to right" />
+        </Button>
+      </>
+    );
+  }
+
   //locations//
   const [urlLocations, setUrlLocations] = useState(
     "https://rickandmortyapi.com/api/location/?page=1"
@@ -103,6 +127,30 @@ export default function Pagination() {
           );
         })}
       </div>
+    );
+  }
+
+  function paginationLocations() {
+    return (
+      <>
+        <Button
+          onClick={() => setUrlLocations(prevLocations)}
+          isActive={currentPageLocations !== 1}
+        >
+          <img src={icon1} alt="to left" />
+        </Button>
+
+        <span className="Span">
+          {currentPageLocations}/{pagesLocations}
+        </span>
+
+        <Button
+          onClick={() => setUrlLocations(nextLocations)}
+          isActive={currentPageLocations !== pagesLocations}
+        >
+          <img src={icon2} alt="to right" />
+        </Button>
+      </>
     );
   }
 
@@ -152,6 +200,30 @@ export default function Pagination() {
     );
   }
 
+  function paginationEpisodes() {
+    return (
+      <>
+        <Button
+          onClick={() => setUrlEpisodes(prevEpisodes)}
+          isActive={currentPageEpisodes !== 1}
+        >
+          <img src={icon1} alt="to left" />
+        </Button>
+
+        <span className="Span">
+          {currentPageEpisodes}/{pagesEpisodes}
+        </span>
+
+        <Button
+          onClick={() => setUrlEpisodes(nextEpisodes)}
+          isActive={currentPageEpisodes !== pagesEpisodes}
+        >
+          <img src={icon2} alt="to right" />
+        </Button>
+      </>
+    );
+  }
+
   const navPage = ["characters", "locations", "episodes"];
   const [activePage, setActivePage] = useState("characters");
 
@@ -165,22 +237,13 @@ export default function Pagination() {
 
       <section className="Menu">
         <div className="Pagination">
-          <Button
-            onClick={() => setUrlCharacters(prevCharacters)}
-            isActive={currentPageCharacters !== 1}
-          >
-            <img src={icon1} alt="to left" />
-          </Button>
-          <span className="Span">
-            {currentPageCharacters}/{pagesCharacters}
-          </span>
-          <Button
-            onClick={() => setUrlCharacters(nextCharacters)}
-            isActive={currentPageCharacters !== pagesCharacters}
-          >
-            <img src={icon2} alt="to right" />
-          </Button>
+          {activePage === "characters" && paginationCharacters()}
+
+          {activePage === "locations" && paginationLocations()}
+
+          {activePage === "episodes" && paginationEpisodes()}
         </div>
+
         <div>
           <Nav
             activePage={activePage}

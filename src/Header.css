@@ -1,7 +1,9 @@
 .Header {
+  display: grid;
+  align-content: center;
   margin: 0;
   background: #333;
   height: 60px;
-  color: rgb(219, 217, 52);
+  color: #eba31d;
   font-family: "Lobster", cursive;
 }
