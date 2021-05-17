@@ -6,5 +6,5 @@
 }
 
 .Button:disabled {
-  background: rgb(216, 226, 226);
+  background: #333;
 }

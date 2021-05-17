@@ -1,8 +1,7 @@
 .NavButton {
   padding: 5px;
   border: none;
-
-  background: rgb(216, 226, 226);
+  background: #333;
   text-align: center;
 }
 
