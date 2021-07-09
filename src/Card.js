@@ -17,7 +17,7 @@ export default function Card({
       <img src={image} alt="character"></img>
       <span>Origin: {origin.name}</span>
       <button onClick={() => setShowInfo(!showInfo)}>
-        {showInfo ? "Hide Info" : "Show more whit windows"}
+        {showInfo ? "Hide Info" : "Show more"}
       </button>
 
       {showInfo && (
